@@ -2,6 +2,8 @@ const http = require("http");
 
 const fs = require("fs");
 
+const slugify = require("slugify");
+
 const url = require("url");
 
 //Folder : .10.Modules
@@ -24,6 +26,12 @@ const tempProduct = fs.readFileSync(
 );
 
 const dataObject = JSON.parse(data);
+
+console.log(slugify("Fresh Avacodos", { lower: true }));
+
+const slugs = dataObject.map((el) => slugify(el.productName, { lower: true }));
+
+console.log(slugs);
 
 const server = http.createServer((req, res) => {
   console.log(req.url);

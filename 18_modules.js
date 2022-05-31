@@ -1,3 +1,4 @@
+// Example 1 : single class
 const C = require('./10.Modules/test-module'); // any name C or ...
 
 console.log(require('module').wrapper); // this is the wrapper funciton ...
@@ -5,3 +6,8 @@ console.log(arguments); // arguments has all variables and functions which are d
 
 const cal = new C(); // imported using require ...
 console.log(cal.add(1, 3));
+
+// Example 2 : multiple classes or functions
+let newModule = require('./10.Modules/text-module-2');
+console.log(newModule.add(1, 10));
+console.log(newModule.multiply(1, 25));

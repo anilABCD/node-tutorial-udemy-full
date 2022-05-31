@@ -11,3 +11,14 @@ console.log(cal.add(1, 3));
 let newModule = require('./10.Modules/text-module-2');
 console.log(newModule.add(1, 10));
 console.log(newModule.multiply(1, 25));
+
+// Example 3  :
+let { add, multiply } = require('./10.Modules/text-module-2');
+console.log(add(10, 1));
+console.log(multiply(1, 25));
+
+// Example 3 : CACHING
+require('./10.Modules/test-module-3')(); // We are also calling that imported function // ok ...
+require('./10.Modules/test-module-3')();
+require('./10.Modules/test-module-3')();
+// Hello from the module :::: is called only once because the module is cached ... ok

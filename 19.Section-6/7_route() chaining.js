@@ -7,17 +7,18 @@ const app = express();
 //json middle ware ...
 app.use(express.json());
 
-//Own Middleware ...
-app.use((req, res, next) => {
-  console.log("From Starging Middleware ...");
-
-  next();
-});
-
-// Get Root ...
-app.get("/", (req, res) => {
-  res.status(404).json({ message: "Hello from server side ", app: "Express " });
-});
+// route ... chaining http methods ...
+app
+  .route("/api/v1/someRoute")
+  .get((req, res, next) => {
+    console.log("someRoute");
+    res.send("Hello");
+    next();
+  })
+  .post((req, res) => {
+    console.log("someRoute");
+    res.send("Hello");
+  });
 
 // Port 80 ...
 const port = 80;

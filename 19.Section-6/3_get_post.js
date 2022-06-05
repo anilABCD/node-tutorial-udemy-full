@@ -19,26 +19,3 @@ const port = 80;
 app.listen(port, () => {
   console.log(`App is running on port ${port} `);
 });
-
-let tours = [
-  {
-    id: 1,
-    desc: "some desc 1",
-  },
-  {
-    id: 2,
-    desc: "some desc 2",
-  },
-  {
-    id: 3,
-    desc: "some desc 3",
-  },
-  {
-    id: 4,
-    desc: "some desc 4",
-  },
-  {
-    id: 5,
-    desc: "some desc 5",
-  },
-];

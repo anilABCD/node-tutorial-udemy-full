@@ -4,14 +4,18 @@ const express = require("express");
 // app
 const app = express();
 
-//json middle ware ...
+// json middle ware ...
+// accessing in req.body in post ...
 app.use(express.json());
 
-//Own Middleware ...
-app.use((req, res, next) => {
-  console.log("From Starging Middleware ...");
-
-  next();
+// post example
+app.post("/createSomething", (req, res) => {
+  // Note :
+  // access post data sent from client ...
+  // dont forget to send data as application/json from postman ... default they use is Text
+  // change that to application/json ...
+  console.log(req.body);
+  res.status(201).send(req.body);
 });
 
 // Get Root ...
@@ -24,26 +28,3 @@ const port = 80;
 app.listen(port, () => {
   console.log(`App is running on port ${port} `);
 });
-
-let tours = [
-  {
-    id: 1,
-    desc: "some desc 1",
-  },
-  {
-    id: 2,
-    desc: "some desc 2",
-  },
-  {
-    id: 3,
-    desc: "some desc 3",
-  },
-  {
-    id: 4,
-    desc: "some desc 4",
-  },
-  {
-    id: 5,
-    desc: "some desc 5",
-  },
-];

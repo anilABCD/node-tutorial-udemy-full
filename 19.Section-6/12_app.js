@@ -1,5 +1,5 @@
 const express = require("express");
-const tourRouter = require("./12_sub_tourRouter_route.param()");
+const tourRouter = require("./12_subject_tourRouter_route.param()");
 const userRouter = require("./12_userRoute");
 const morgan = require("morgan");
 

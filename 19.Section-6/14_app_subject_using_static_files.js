@@ -7,6 +7,8 @@ const app = express();
 
 app.use(morgan("dev"));
 app.use(express.json()); // for post requrest , accessing req.body
+
+// using static files
 app.use(express.static("./public/"));
 
 app.use("/api/v1/tours", tourRouter);

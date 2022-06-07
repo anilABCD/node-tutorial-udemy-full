@@ -1,10 +1,10 @@
 const express = require("express");
-const tourRouter = require("./13_tourRouter");
-const userRouter = require("./13_userRoute__subject_multiple_middleware");
 const morgan = require("morgan");
-
 // for loading configuration ...
 const dotenv = require("dotenv");
+
+const tourRouter = require("./13_tourRouter");
+const userRouter = require("./13_userRoute__subject_multiple_middleware");
 
 // setting configuration path ...
 dotenv.config({ path: `${__dirname}/config.env` });

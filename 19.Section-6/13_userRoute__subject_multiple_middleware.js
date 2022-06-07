@@ -9,7 +9,7 @@ function getUsers(req, res) {
 }
 
 function middleWare(req, res, next) {
-  if (req.body.id2 == 10)
+  if (req.body.id2 === 10)
     return res.status(404).send("Not found from middleware");
   next();
 }
